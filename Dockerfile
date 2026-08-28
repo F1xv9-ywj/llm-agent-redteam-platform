@@ -1,4 +1,4 @@
-FROM python:3.11.13-slim@sha256:9e4c8c26dd6ee0b0ed3d4bbfd8046c33ca7f1c3f16f5d52c8de7b31a79709230
+FROM python:3.14.7-slim@sha256:cae66f2ef0ec51a9891263eeee7f987dacf0a9879e8aa9353d5606e0530619a5
 WORKDIR /app
 RUN useradd --create-home --uid 10001 redsentinel
 COPY pyproject.toml README.md LICENSE ./
