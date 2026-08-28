@@ -1,0 +1,11 @@
+name: Feature request
+description: Propose a safe, authorized enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes: {label: Problem and authorized use case}
+    validations: {required: true}
+  - type: textarea
+    id: safety
+    attributes: {label: Safety and isolation considerations}
+    validations: {required: true}

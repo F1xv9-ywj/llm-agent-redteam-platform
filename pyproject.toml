@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling>=1.25,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "redsentinel"
+version = "0.1.0"
+description = "Safe-by-default, authorized LLM security evaluation platform"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {file = "LICENSE"}
+dependencies = ["fastapi>=0.116,<1", "uvicorn[standard]>=0.35,<1"]
+
+[project.optional-dependencies]
+dev = ["httpx>=0.28,<1", "mypy>=1.17,<2", "pytest>=8.4,<9", "pytest-cov>=6.2,<7", "ruff>=0.12,<1"]
+
+[project.scripts]
+redsentinel = "redsentinel.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/redsentinel"]
+
+[tool.pytest.ini_options]
+addopts = "-q --cov=redsentinel --cov-report=term-missing --cov-fail-under=80"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 160
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+packages = ["redsentinel"]

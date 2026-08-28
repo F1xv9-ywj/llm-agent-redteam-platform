@@ -1,0 +1,10 @@
+# Reproducible strategy: install the project from pyproject.toml, then freeze the
+# resolver output in CI/release automation with: pip freeze --all > requirements.lock
+# Direct compatibility bounds are intentionally maintained in pyproject.toml.
+fastapi==0.116.1
+uvicorn==0.35.0
+httpx==0.28.1
+mypy==1.17.1
+pytest==8.4.1
+pytest-cov==6.2.1
+ruff==0.12.8

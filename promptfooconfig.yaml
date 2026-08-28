@@ -1,0 +1,8 @@
+# Optional example only. Review in an isolated container before execution.
+# No remote provider or telemetry is enabled by this file.
+description: RedSentinel harmless synthetic smoke case
+prompts: ["Return the word SAFE for this synthetic test: {{input}}"]
+providers: ["echo"]
+tests:
+  - vars: {input: "color sorting"}
+    assert: [{type: contains, value: "SAFE"}]
